@@ -1,0 +1,25 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Score</title>
+    <link rel="stylesheet" href="{% static 'css/style1.css' %}">
+    <link rel="icon" href="{% static 'css/image.png' %}" type="image/x-icon">
+</head>
+<body>
+    <div class="nav">
+        <h1 style="color: aliceblue;">Similarity</h1>
+    </div>
+    <div class="content">
+        <div class="show">
+            {% if similarity_score %}
+                <p style="font-size: larger;">The similarity score is :{{ similarity_score }}</p>
+            {% elif error %}
+                <p>Error : {{ error }}</p>
+            {% endif %}
+        </div>
+    </div> 
+</body>
+</html>

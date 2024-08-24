@@ -1,0 +1,59 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Summary</title>
+    <!-- Uncomment the line below to include the stylesheet -->
+    <link rel="stylesheet" href="{% static 'css/style2.css' %}">
+    <link rel="icon" href="{% static 'css/image.png' %}" type="image/x-icon">
+</head>
+<body>
+    <div class="vs">
+        <div class="trans">
+            <h4 class = 'heading'>Transcript</h4>
+            <div class = 'content'>
+                {% if transcript %}
+                    <p>{{ transcript }}</p>
+                {% elif error %}
+                    <p>Error: {{ error }}</p>
+                {% endif %}
+            </div>
+        </div>
+        <div class="summ">
+            <h4 class = 'heading'>Summary</h4>
+            <div class = 'content'>
+                {% if summary %}
+                    <p>{{ summary }}</p>
+                {% elif error %}
+                    <p>Error: {{ error }}</p>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+    <div class="vs">
+    <div class="trans">
+        <h4 class="heading">Length</h4>
+        <div class = 'content'>
+            {% if len_tran %}
+                <p>{{ len_tran }}</p>
+            {% elif error %}
+                <p>Error: {{ error }}</p>
+            {% endif %}
+        </div>
+    </div>
+    <div class="summ">
+        <h4 class = "heading">Length</h4>
+        <div class = 'content'>
+            {% if len_sum %}
+                <p>{{ len_sum }}</p>
+            {% elif error %}
+                <p>Error: {{ error }}</p>
+            {% endif %}
+        </div>
+    </div>
+    
+</div>
+</body>
+</html>

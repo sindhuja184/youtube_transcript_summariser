@@ -1,0 +1,59 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>YouTube Transcript Summarizer</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <!-- <link rel="icon" href="{% static 'css/image.png' %}" type="image/x-icon"> -->
+</head>
+<body>
+    <div class="nav">
+        <div class="head" style="color: #e7ecef;">Youtube Transcript Summarizer</div>
+    </div>
+    <div class="full">
+        <div class="rem">
+            <div class="title">
+                Enter YouTube Video ID
+            </div>
+            <div class="formpart">
+                <form id="youtube-form" target="_blank" method="post">
+                    {% csrf_token %}
+                    <div class="v">
+                        <div class="req"><input type="text" id="video_id" name="video_id" required></div>
+                    </div>
+                    <div class="button">
+                        <button type="button" onclick="submitForm('get_transcript_long')" style="font-size: large;">Summarize</button>
+                        <!-- <button type="button" onclick="submitForm('get_summary')" style="font-size: large;">Get Summary</button> -->
+                        <!-- <button type="button" onclick="submitForm('get_transcript')" style="font-size: large;">Get Transcript</button> -->
+                        <!-- <button type="button" onclick="submitForm('get_similarity')" style="font-size: large;">Get Score</button> -->
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <div id="loader" class="loader"></div>
+
+    <script>
+        function submitForm(action) {
+            var form = document.getElementById("youtube-form");
+            if (action == 'get_summary') {
+                form.action = "{% url 'get_summary' %}";
+            } else if (action == 'get_transcript') {
+                form.action = "{% url 'get_transcript' %}";
+            } else if (action == 'get_similarity') {
+                form.action = "{% url 'get_similarity' %}";
+            } else if (action == 'get_transcript_long') {
+                form.action = "{% url 'get_transcript_long' %}";
+            }
+
+            // Show loader before submitting the form
+            document.getElementById('loader').style.display = 'block';
+            
+            form.submit();
+        }
+    </script>
+</body>
+</html>

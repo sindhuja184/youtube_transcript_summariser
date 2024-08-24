@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel = 'stylesheet' href = 'style2.css'/>
+</head>
+<body>
+    <div class="vs">
+        <div class="trans">
+            <h4 class = 'heading'>Transcript</h4>
+            <p class = 'content'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste sint aliquam voluptate, nemo corrupti non nulla perspiciatis fuga maiores natus magni quaerat praesentium animi voluptatum quo mollitia recusandae quas harum.</p>
+        </div>
+        <div class="summ">
+            <h4 class = 'heading'>Summary</h4>
+            <p class = 'content'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere beatae odit doloribus similique, illo provident inventore nesciunt, minus quas temporibus libero totam quos amet earum rem aliquid consequuntur at dignissimos!</p>
+        </div>
+    </div>
+    <div class="vs">
+        <div class="trans">
+            <h4 class="heading">Length</h4>
+            <p class = 'content'>hello</p>
+        </div>
+        <div class="summ">
+            <h4 class = "heading">Length</h4>
+            <p class = 'content'>hello</p>
+        </div>
+    </div>
+</body>
+</html>
+<div class="content">
+    <div class="sum">
+        {% if summary %}
+            <p>{{ summary }}</p>
+        {% elif error %}
+            <p>Error: {{ error }}</p>
+        {% endif %}
+    </div>
+    
+    <p>Transcript</p>
+    <div class="tran">
+        {% if transcript %}
+            <p>{{ transcript }}</p>
+        {% elif error %}
+            <p>Error: {{ error }}</p>
+        {% endif %}
+    </div>
+    
+    <div class="similarity">
+        <p>Similarity</p>
+        {% if similarity_score %}
+            <p>{{ similarity_score }}</p>
+        {% elif error %}
+            <p>Error: {{ error }}</p>
+        {% endif %}
+    </div>
+    
+    <div class="len_summ">
+        <p>Len Sum</p>
+        {% if len_sum %}
+            <p>{{ len_sum }}</p>
+        {% elif error %}
+            <p>Error: {{ error }}</p>
+        {% endif %}
+    </div>
+    
+    <div class="len_trans">
+        <p>Len Trans</p>
+        {% if len_tran %}
+            <p>{{ len_tran }}</p>
+        {% elif error %}
+            <p>Error: {{ error }}</p>
+        {% endif %}
+    </div>
+</div> 

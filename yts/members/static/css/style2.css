@@ -1,0 +1,35 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    background-color: #E7ECEF;
+}
+.vs{
+    display: flex;
+    align-items: normal;
+    justify-content: space-around;
+}
+
+.trans{
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    
+}
+.summ{
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    border-left: 10px solid #8B8C89;
+}
+.heading{
+    background-color: #274C77;
+    color: #A3CEF1;
+    text-align: center;
+    font-size: 300%;
+    height: 60px;
+}
+.content{
+    text-align:center;
+    font-size: large;
+}
+/* CSS */
